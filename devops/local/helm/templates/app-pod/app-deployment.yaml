@@ -69,7 +69,7 @@ spec:
           image: {{ .Values.deployment.systementry.image }}
           ports:
             - name: http-port
-              containerPort: 8043
+              containerPort: 8013
           env:
             - name: {{ .Values.app.prefix }}-app-db
               value: {{ .Values.app.prefix }}-app-db
@@ -81,7 +81,7 @@ spec:
           image: {{ .Values.deployment.subjects.image }}
           ports:
             - name: http-port
-              containerPort: 8044
+              containerPort: 8014
           env:
             - name: {{ .Values.app.prefix }}-app-db
               value: {{ .Values.app.prefix }}-app-db
@@ -93,7 +93,7 @@ spec:
           image: {{ .Values.deployment.students.image }}
           ports:
             - name: http-port
-              containerPort: 8045
+              containerPort: 8015
           env:
             - name: {{ .Values.app.prefix }}-app-db
               value: {{ .Values.app.prefix }}-app-db

@@ -70,9 +70,9 @@ module.exports = {
             ],
             "environmentFiles": null,
             "environment": [{"name":"MONGO_DB_URL","value":"mongodb://admin:password@127.0.0.1:27017/onetomany_0445?authSource=admin"},{"name":"MONGO_DOMAIN","value":"127.0.0.1"},{"name":"SECURITYURL","value":"http://127.0.0.1:8003"},{"name":"AUTHPROXYURL","value":"http://127.0.0.1:8001"},{"name":"ADMINURL","value":"http://127.0.0.1:8004"},{"name":"GCAMURL","value":"http://127.0.0.1:8007"},{"name":"APIGATEWAY","value":"http://127.0.0.1:8000"},{"name":"SYSTEMCREDENTIALMANAGERURL","value":"http://127.0.0.1:8005"}
-            ,{"name":"SYSTEMENTRYURL","value":"http://127.0.0.1:8043"}
-            ,{"name":"SUBJECTSURL","value":"http://onetomany0.local:8044"}
-            ,{"name":"STUDENTSURL","value":"http://onetomany0.local:8045"}
+            ,{"name":"SYSTEMENTRYURL","value":"http://127.0.0.1:8013"}
+            ,{"name":"SUBJECTSURL","value":"http://onetomany0.local:8014"}
+            ,{"name":"STUDENTSURL","value":"http://onetomany0.local:8015"}
             ],
             "secrets": null,
             "mountPoints": [
@@ -294,7 +294,7 @@ module.exports = {
             ],
             "environmentFiles": null,
             "environment": [{"name":"MONGO_DB_URL","value":"mongodb://admin:password@127.0.0.1:27017/onetomany_0445?authSource=admin"},{"name":"MONGO_DOMAIN","value":"127.0.0.1"},{"name":"SECURITYURL","value":"http://127.0.0.1:8003"},{"name":"AUTHPROXYURL","value":"http://127.0.0.1:8001"},{"name":"ADMINURL","value":"http://127.0.0.1:8004"},{"name":"GCAMURL","value":"http://127.0.0.1:8007"},{"name":"APIGATEWAY","value":"http://127.0.0.1:8000"}
-            ,{"name":"SYSTEMENTRYURL","value":"http://127.0.0.1:8043"}
+            ,{"name":"SYSTEMENTRYURL","value":"http://127.0.0.1:8013"}
             ],
             "mountPoints": [
                 {
@@ -375,9 +375,9 @@ module.exports = {
             "essential": true,
             "portMappings": [
                 {
-                    "containerPort": "8043",
+                    "containerPort": "8013",
                     "protocol": "tcp",
-                    "hostPort": "8043"
+                    "hostPort": "8013"
                 }
             ],
             "environmentFiles": null,

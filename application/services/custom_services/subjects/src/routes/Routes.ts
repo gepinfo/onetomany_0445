@@ -11,7 +11,8 @@ export class Routes {
                 status: 'up'
             })
         })
-        app.route('/subjectsentity').post(this.subjectsentity.GpCreate);
+        app.route('/subjectsentity/get/search').get(this.subjectsentity.GpSearch);
+app.route('/subjectsentity').post(this.subjectsentity.GpCreate);
      }
 
 }
