@@ -13,11 +13,23 @@ export class studentsentityController implements Controller {
     }
 
     private initializeRoutes() {
-        this.router.get('/studentsentity', this.GpGetAllValues);
+        this.router.get('/studentsentity/get/search', this.GpSearch);
+this.router.get('/studentsentity', this.GpGetAllValues);
 this.router.post('/studentsentity', this.GpCreate);
-        this.router.get('/studentsentity/get/searchrelationship', this.GpSearchRelationship);
+        //#@gepdelimeterone@#
     }
 
+public GpSearch(req: Request, res: Response) {
+            new CustomLogger().showLogger('info', 'Enter into studentsentityController.ts: GpSearch');
+        new ApiAdapter().get(Constant.STUDENTSURL + `${req.url}` )
+        .then((res: any) => res.response.json()).then(result => {
+              req.baseUrl === '/mobile' ? res.send(result) :
+              req.baseUrl === '/web' ? res.send(result) : res.send(null)
+            new CustomLogger().showLogger('info', 'Exit from studentsentityController.ts: GpSearch');
+        }).catch(err => {
+            res.send(err);
+        });
+    }
 public GpGetAllValues(req: Request, res: Response) {
             new CustomLogger().showLogger('info', 'Enter into studentsentityController.ts: GpGetAllValues');
         new ApiAdapter().get(Constant.STUDENTSURL + `${req.url}` )
@@ -41,7 +53,7 @@ public GpCreate(req: Request, res: Response) {
         });
     }
 
-    undefined
+    //#@gepdelimeter@#
 
 
 

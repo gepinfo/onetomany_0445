@@ -13,12 +13,26 @@ info:
       name: Apache 2.0
       url: https://www.apache.org/licenses/LICENSE-2.0.html
 servers:
-   - url: http://localhost:8030
+   - url: http://localhost:8039
      description: students
 tags:
 - name: studentsentity
   description: Second Entity
 paths:
+   "/studentsentity/get/search":
+      get:
+         tags:
+         -  studentsentity
+         description: GpSearch
+         responses:
+            200:
+               description: Success
+            400:
+               description: Bad Request
+            404:
+               description: Not Found
+            500:
+               description: Internal Server Error
    "/studentsentity":
       get:
          tags:

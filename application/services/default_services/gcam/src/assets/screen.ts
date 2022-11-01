@@ -6,6 +6,8 @@
     ,
 {"resources":"sefscreen", "role":"Guest"}
     ,
+{"resources":"createsubjects", "role":"Guest"}
+    ,
 {"resources":"createstudents", "role":"Guest"}
     ,
 {"resources":"searchstudent", "role":"Guest"}

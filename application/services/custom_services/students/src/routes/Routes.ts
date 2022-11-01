@@ -11,7 +11,8 @@ export class Routes {
                 status: 'up'
             })
         })
-        app.route('/studentsentity').get(this.studentsentity.GpGetAllValues);
+        app.route('/studentsentity/get/search').get(this.studentsentity.GpSearch);
+app.route('/studentsentity').get(this.studentsentity.GpGetAllValues);
 app.route('/studentsentity').post(this.studentsentity.GpCreate);
 app.route('/studentsentity/get/searchrelationship').get(this.studentsentity.GpSearchRelationship);
      }
