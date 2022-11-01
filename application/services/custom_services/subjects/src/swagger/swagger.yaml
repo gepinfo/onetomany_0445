@@ -1,0 +1,54 @@
+---
+openapi: 3.0.0
+info:
+   version: 1.3.0
+   title: onetomany open api specification
+   description: subjects API
+   termsOfService: http://api_url/terms/
+   contact:
+      name: ContactName
+      email: hello@wolox.co
+      url: https://www.wolox.com.ar/
+   license:
+      name: Apache 2.0
+      url: https://www.apache.org/licenses/LICENSE-2.0.html
+servers:
+   - url: http://localhost:8029
+     description: subjects
+tags:
+- name: subjectsentity
+  description: First Entity
+paths:
+   "/subjectsentity":
+      post:
+         tags:
+         -  subjectsentity
+         description: GpCreate
+         requestBody:
+            content:
+               application/json:
+                  schema:
+                     $ref: "#/components/schemas/subjectsentity"
+         responses:
+            200:
+               description: Success
+            400:
+               description: Bad Request
+            404:
+               description: Not Found
+            500:
+               description: Internal Server Error
+components:
+   schemas:
+      subjectsentity:
+         type: object
+         properties:
+            name:
+               type: "string"
+               description: Description
+            subjectid:
+               type: "number"
+               description: Description
+            professorname:
+               type: "string"
+               description: Description

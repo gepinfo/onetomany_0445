@@ -1,0 +1,28 @@
+<h2 class="screen-align">Createstudents</h2>
+<label id="template-i45j" class="label ">
+    <div id="template-iuid" class="">Student name:</div>
+</label>
+<input id="template-icqz" placeholder="Enter student name" required="true"
+[(ngModel)]="studentsentity.name" [ngModelOptions]="{standalone: true}"
+class="input form-control " />
+<label id="template-i7nu" class="label ">
+    <div id="template-i4on" class="">Age:</div>
+</label>
+<input id="template-iia1" placeholder="Enter student age" required="true"
+[(ngModel)]="studentsentity.age" [ngModelOptions]="{standalone: true}"
+class="input form-control " />
+<label id="template-i43w" class="label ">
+    <div id="template-iajx" class="">Student ID:</div>
+</label>
+<input id="template-iwjl" placeholder="Enter student ID" required="true"
+[(ngModel)]="studentsentity.studentid" [ngModelOptions]="{standalone: true}"
+class="input form-control " />
+<label id="template-i1njm" class="label ">
+    <div id="template-iv78k" class="">Subjects ID:</div>
+</label>
+<input id="template-i0qnr" placeholder="Enter subjects ID" required="true"
+[(ngModel)]="studentsentity.subjectsid" [ngModelOptions]="{standalone: true}"
+class="input form-control " />
+<button id="template-if4g3" (click)="GpCreate()" class="button btn btn-primary ">
+    <div id="template-i3mns" class="">Create</div>
+</button>

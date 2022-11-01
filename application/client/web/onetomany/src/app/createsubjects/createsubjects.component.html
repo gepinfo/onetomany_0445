@@ -1,0 +1,22 @@
+<h2 class="screen-align">Createsubjects</h2>
+<label id="template-i3f7" class="label ">
+    <div id="template-iite" class="">Subject name:</div>
+</label>
+<input id="template-i4fh" placeholder="Enter subject name" required="true"
+[(ngModel)]="subjectsentity.name" [ngModelOptions]="{standalone: true}"
+class="input form-control " />
+<label id="template-isrc" class="label ">
+    <div id="template-ical" class="">Subject ID:</div>
+</label>
+<input id="template-ishe" placeholder="Enter subject ID" required="true"
+[(ngModel)]="subjectsentity.subjectid" [ngModelOptions]="{standalone: true}"
+class="input form-control " />
+<label id="template-ibya" class="label ">
+    <div id="template-i6ha" class="">Professor name:</div>
+</label>
+<input id="template-irv9" placeholder="Enter professor name" required="true"
+[(ngModel)]="subjectsentity.professorname" [ngModelOptions]="{standalone: true}"
+class="input form-control " />
+<button id="template-iu82i" (click)="GpCreate()" class="button btn btn-primary ">
+    <div id="template-idew4" class="">Create</div>
+</button>
