@@ -16,7 +16,7 @@ export class studentsentityController implements Controller {
         this.router.get('/studentsentity/get/search', this.GpSearch);
 this.router.get('/studentsentity', this.GpGetAllValues);
 this.router.post('/studentsentity', this.GpCreate);
-        //#@gepdelimeterone@#
+        this.router.get('/studentsentity/get/searchrelationship', this.GpSearchRelationship);
     }
 
 public GpSearch(req: Request, res: Response) {
@@ -53,7 +53,38 @@ public GpCreate(req: Request, res: Response) {
         });
     }
 
-    //#@gepdelimeter@#
+    public GpSearchRelationship(req: Request, res: Response) {
+                                                    let response1:any;
+                                                    let response2:any;
+                                                    let response2arr:any[]=[];
+                                                    let finalresponse:any;
+                                                    let relURL = '/subjectsentity/get/search?subjectid='; 
+                                                    new CustomLogger().showLogger('info', 'Enter into studentsentityController.ts: GpSearch');
+                                                    new ApiAdapter().get(Constant.STUDENTSURL + `${req.url}`)
+                                                    .then((res: any) => res.response.json()).then(async result => {
+                                                        response1 = result;
+                                                        new CustomLogger().showLogger('info', 'Exit from studentsentityController.ts: GpSearch');
+                                                        new CustomLogger().showLogger('info', 'Enter into subjectsentityController.ts: GpSearch');
+                                                        for(const data of response1[0].subjectsid)
+                                                        {
+                                                            await new ApiAdapter().get(`${Constant.SUBJECTSURL}` + `${relURL}` + data).then((res: any) => res.response.json()).then(result => 
+                                                            {
+                                                                response2 = result;
+                                                                new CustomLogger().showLogger('info', 'Exit from subjectsentityController.ts: GpSearch')
+                                                                response2arr.push(response2);
+                                                            });
+                                                        };
+                                                        finalresponse = 
+                                                        {
+                                                            "response1" : response1,
+                                                            "response2" : response2arr
+                                                        }
+                                                        req.baseUrl === '/mobile' ? res.send(finalresponse) :
+                                                        req.baseUrl === '/web' ? res.send(finalresponse) : res.send(null);
+                                                    }).catch(err => {
+                                                        res.send(err);
+                                                    });
+                                                }
 
 
 

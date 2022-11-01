@@ -204,7 +204,7 @@ services:
     image: systementry-0445
     container_name: systementry-0445
     ports: 
-      - 8037:8037
+      - 8043:8043
     env_file: .env
     depends_on:
       - mongo
@@ -220,7 +220,7 @@ services:
     image: subjects-0445
     container_name: subjects-0445
     ports: 
-      - 8038:8038
+      - 8044:8044
     env_file: .env
     depends_on:
       - mongo
@@ -236,7 +236,7 @@ services:
     image: students-0445
     container_name: students-0445
     ports: 
-      - 8039:8039
+      - 8045:8045
     env_file: .env
     depends_on:
       - mongo
